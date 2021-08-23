@@ -1,0 +1,178 @@
+
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+html {
+     font-family: Arial, Helvetica, sans-serif;
+}
+#warp {
+     width: 1075px;
+     margin: 0 auto;
+}
+#slideshow {
+     overflow: hidden;
+     height: 450px;
+     width: 1075px;
+     margin: 0 auto;
+   }
+  .slide-wrapper {
+     width: 4300px;
+     -webkit-animation: slide 20s ease infinite;
+   }
+  .slide img {
+    background: center / contain ;
+     float: left;
+     height: 450px;
+     width: 1075px;
+   }
+  @-webkit-keyframes slide {
+     15% {margin-left: 0px;}
+     30% {margin-left: -1075px;}
+     50% {margin-left: -2150px;}
+     60% {margin-left: -3225px;}
+     80% {margin-left: -1075px;}
+   }
+   
+#warp .header .nav {
+     width: 100%;
+     height: 50px;
+     background: #333;
+}
+#warp .header .nav ul {
+     
+     list-style: none;
+
+}
+#warp .header .nav ul li {
+     float: left;
+}
+#warp .header .nav ul li a {
+     color: #fff;
+     line-height: 50px;
+     text-decoration: none;
+     display: block;
+     padding: 0 30px;
+     transition: background .3s;
+}
+#warp .header .nav ul li a:hover {
+     background: #fff;
+     color: #333;
+}
+#warp .header .nav .search {
+     float: right;
+     padding-left: 10px;
+     margin: 10px 5px;
+}
+#warp .header .nav .search  input {
+     width: 300px;
+     height: 30px;
+     border: 1px solid #777;
+     border-radius: 4px;
+     padding-left: 20px ;
+     outline: none;
+     display: block;
+}
+
+/* end header */
+/* content */
+
+#warp .content .box {
+     width: 250px;
+     height: 350px;
+     margin-top: 20px ;
+     border-radius: 5px;
+     box-shadow: 2px 2px 10px;
+     float: left;
+     transition: box-shadow .2s;
+}
+.box  + .box {
+     margin-left: 25px;
+}
+#warp .content .box:hover {
+     box-shadow: 1px 1px 15px;
+}
+#warp .content .s1 h2 ,
+#warp .content .s2 h2 ,
+#warp .content .s3 h2 ,
+#warp .content .s4 h2 ,
+#warp .content .s5 h2 ,
+#warp .content .s6 h2 ,
+#warp .content .s7 h2 ,
+#warp .content .s8 h2 ,
+#warp .content .s9 h2 ,
+#warp .content .s10 h2 ,
+#warp .content .s11 h2 ,
+#warp .content .s12 h2 
+{
+     position: absolute;
+     color: rgb(104 ,253, 11);
+     top:320px;
+     box-shadow: 1px 1px 5px ;
+}
+#warp .content .s1,
+#warp .content .s2,
+#warp .content .s3,
+#warp .content .s4,
+#warp .content .s5,
+#warp .content .s6,
+#warp .content .s7,
+#warp .content .s8,
+#warp .content .s9,
+#warp .content .s10,
+#warp .content .s11,
+#warp .content .s12{
+     position: relative;
+}
+#warp .content .s1 {
+     background: url(./imgs/picture1.jpg) center /cover;
+}
+
+#warp .content .s2 {
+     background: url(./imgs/picture2.jpg) center /  cover;
+}
+#warp .content .s3 {
+     background: url(./imgs/picture3.jpg) center /  cover;
+}
+#warp .content .s4 {
+     background: url(./imgs/picture4.jpg) center /  cover;
+}
+#warp .content .s5 {
+     background: url(./imgs/picture5.jpg) center /  cover;
+}
+#warp .content .s6 {
+     background: url(./imgs/picture6.jpg) center /  cover;
+}
+#warp .content .s7 {
+     background: url(./imgs/picture7.jpg) center /  cover;
+}
+#warp .content .s8 {
+     background: url(./imgs/picture8.jpg) center /  cover;
+}
+#warp .content .s9 {
+     background: url(./imgs/picture9.jpg) center /  cover;
+}
+#warp .content .s10 {
+     background: url(./imgs/picture10.jpg) center /  cover;
+}
+#warp .content .s11 {
+     background: url(./imgs/picture11.jpg) center /  cover;
+}
+#warp .content .s12 {
+     background: url(./imgs/picture12.jpg) center /  cover;
+}
+#warp .footer {
+     border-top: 2px solid #000 ;
+     text-align: center;
+     margin-top: 5px;
+}
+#warp .footer a img{
+     text-decoration: none;
+     width: 20px;
+     height: 20px;
+     line-height: 70px;
+     margin-top: 20px;
+     cursor: pointer;
+}
+
