@@ -6,155 +6,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="sass/css/style.css">
     <style>
-        #wapper {
-            display: flex;
-            flex-direction: column;
-            position: relative;
+        body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#wrapper{
+  width: 100%;
+  height: 100vh;
+  background: yellow;
+  display: flex;
+  justify-items: center;
+  justify-content: space-around;
+}
 
-        }
+.mobile,
+.tablet,
+.pc {
+  display: none;
+}
 
-        #wapper>* {
-            margin: 10px 30px;
-        }
-
-        input {
-            width: 30px;
-            height: 30px;
-            cursor: pointer;
-            outline: none;
-            caret-color: transparent;
-        }
-
-        .option>* {
-            margin: 0 10px;
-            font-size: 30px;
-        }
-
-        span {
-            top: 90px;
-            left: 0px;
-        }
-
-        #notify {
-            position: absolute;
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 100%;
-            height: 100%;
-            padding: 20px;
-
-        }
-
-        #notify>* {
-            color: red;
-            text-align: center;
-        }
-
-        #notify button {
-            width: 100px;
-            margin: 0 auto;
-            opacity: .8;
-            font-size: 20px;
-            border: none;
-            cursor: pointer;
-        }
+@media only screen and (max-width: 739.9px) {
+  .mobile {
+    display: block;
+  }
+}
+@media only screen and (min-width: 740px) and (max-width: 1023.9px) {
+  .tablet {
+    display: block;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .pc {
+    display: block;
+  }
+}
     </style>
 </head>
 
 <body>
-    <div id="wapper">
-        <h2>Có Phải Bạn Đang Ngáo!</h2>
-        <div class="option"><input type="text" id="yes" value=""><span>Đúng✔</span></div>
-
-        <div class="option"><input type="text" id="no" value=""><span>Không✗</span></div>
-        <div id="notify">
-            <h2>Ôi bạn ơi, Chơi đồ ít thôi bạn ạ</h2>
-            <button id="close">Đóng</button>
+    <div id="wrapper">
+        
+        <div class="mobile">
+            <h2>mobile</h2>
+        </div>
+        <div class="tablet">
+            <h2>tablet</h2>
+        </div>
+        <div class="pc">
+            <h2>pc</h2>
         </div>
     </div>
 </body>
-<script>
-    var yes = document.querySelector('#yes');
-    var no = document.querySelector('#no');
-    var yesBtn = 0;
-    var notify = document.querySelector('#notify')
-    var _close = document.querySelector('#close')
-
-    yes.addEventListener('click', () => {
-        ++yesBtn;
-
-        if (yesBtn % 2 == 0) {
-            yes.value = ''
-        } else {
-            yes.value = '✔'
-            yes.style.color = 'red'
-            notify.style.display = 'flex';
-            notify.style.background = 'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8FPSGRdzUhI0VHCy4W8iD4Y_wYknoIRUZTg&usqp=CAU) center / cover';
-        }
-    })
-
-    var noBtn = 0;
-    var span;
-    no.addEventListener('click', (e) => {
-        ++noBtn;
-        yes.value = ''
-        if (noBtn <= 5) {
-            addElement();
-            span = document.querySelectorAll('.list');
-        } else {
-            notify.style.display = 'flex';
-            notify.style.background = 'url(https://static.lag.vn/upload/news/22/07/04/chac-la-khong-gion-dau-la-gi_YLUE.jpg?w=800&encoder=wic&subsampling=444) center / cover';
-        }
-
-
-    })
-
-    _close.addEventListener('click', () => {
-        notify.style.display = 'none'
-        noBtn = 0;
-        span.forEach(element => {
-            element.remove()
-        });
-    })
-
-
-    function addElement() {
-
-        const newSpan = document.createElement("span");
-
-        newSpan.style.position = "absolute";
-        newSpan.style.color = "red";
-        newSpan.style.opacity = ".6";
-        newSpan.classList = 'list'
-
-        let positionTop = random(70, 150)
-        let positionLeft = random(0, 60)
-
-        while (positionTop > 110 && positionTop < 120) {
-            positionTop = random(100, 160)
-        }
-
-        while (positionLeft > 15 && positionLeft < 55) {
-            positionLeft = random(0, 120)
-        }
-
-        newSpan.style.top = positionTop.toString() + 'px';
-        newSpan.style.left = positionLeft.toString() + 'px';
-
-        const newContent = document.createTextNode("✗");
-        newSpan.appendChild(newContent);
-
-        var currentNo = document.querySelector('#no');
-        currentNo.parentNode.insertBefore(newSpan, currentNo)
-
-    }
-
-
-    function random(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-</script>
 
 </html>
